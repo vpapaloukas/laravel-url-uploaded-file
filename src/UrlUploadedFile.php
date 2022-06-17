@@ -24,6 +24,9 @@ class UrlUploadedFile extends UploadedFile
         $tempFile = tempnam(sys_get_temp_dir(), 'url-file-');
         file_put_contents($tempFile, $stream);
         fclose($stream);
+        
+        $remoteHeaders = array_change_key_case(get_headers($url, 1), CASE_LOWER);
+        $mimeType = data_get($remoteHeaders,'content-type');
 
         return new static($tempFile, $originalName, $mimeType, $error, $test);
     }
