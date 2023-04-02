@@ -7,7 +7,7 @@ This package extends Laravel's [`UploadedFile`](https://github.com/laravel/frame
 ``` php
 use Vpap\UrlUploadedFile\UrlUploadedFile;
 
-$file = UrlUploadedFile::createFromUrl('https://picsum.photos/150');
+$file = UrlUploadedFile::createFromUrl('https://placehold.it/150x150');
 ```
 
 ## Credits & More Info
